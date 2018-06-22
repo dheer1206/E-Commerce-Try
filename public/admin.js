@@ -3,6 +3,7 @@ window.onload = function() {
     let iTitle = this.document.getElementById("pName") ;
     let iPrice = this.document.getElementById("pPrice") ;
     let iContent = this.document.getElementById("pDes") ;
+    let iImage = this.document.getElementById("pImage") ;
 
     let submit = this.document.getElementById( 'submit' ) ;
 
@@ -14,12 +15,13 @@ window.onload = function() {
 
             title : iTitle.value ,
             content : iContent.value ,
-            price : iPrice.value 
+            price : iPrice.value ,
+            image : iImage.value 
         } ;
-        //console.log("in js") ;
-        //console.log(product) ;
+        console.log("in js") ;
+        console.log(product) ;
         $.post( "/addproduct" , product , function ( data , status ) {
-            //console.log( "Returned" ) ;
+            console.log( "Returned" ) ;
             window.location = "/" ;
         } ) ;
 

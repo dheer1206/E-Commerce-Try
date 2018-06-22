@@ -19,12 +19,14 @@ window.onload = function() {
                 window.location = "/admin" ;
             } )
         }else {
-            alert("Item added Successfully...") ;
-            if (cart[id] == null) {
-                cart[id] = 1 ;
-            }else {
-                cart[id]++ ;
-            }
+           if ( event.target.className == "btn btn-primary" ) {
+                alert("Item added Successfully...") ;
+                if (cart[id] == null) {
+                    cart[id] = 1 ;
+                }else {
+                    cart[id]++ ;
+                }
+           }
             //console.log(cart) ;
         }
 

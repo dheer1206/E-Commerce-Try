@@ -17,12 +17,20 @@ const connection = mysql.createConnection({
 });
 
 // setting up the database to be used ;
+
+let startQuery = "create database if not exists ecommerce ;" +
+                  "use ecommerce ;" +
+                  "create table if not exists products ( id int primary key auto_increment , title varchar(200) , content varchar(1000) , price int , image varchar(200) ) ; " +
+                  "create table if not exists cart ( id int primary key , title varchar(200) , content varchar(1000) , price int , quantity int ) ; " ;
+
+
 connection.query(
-  'use ecommerce ;',
+    startQuery ,
   function(err, results, fields) {
       if (err) {
           console.log( "Error " + err ) ;
       }
+      console.log("Done Start Query") ;
   }
 );
  
@@ -30,7 +38,8 @@ app.post("/addproduct" , function (req, res) {
     //console.log("inside") ;
     let data = req.body ;
 
-    let query = "insert into products (title , content , price) values ( '" + data.title + "' , '" + data.content + "' , " + data.price + " );" ;
+    let query = "insert into products (title , content , price, image) values ( '" + 
+                data.title + "' , '" + data.content + "' , " + data.price + ", '" + data.image + "' );" ;
     connection.query(
         query,
         function(err, results, fields) {

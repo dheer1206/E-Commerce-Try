@@ -57,12 +57,17 @@
                             </h5>
                         </div>
                         <div class="card-body">
-                          <p class="card-text" style = "text-align: center">
-                              <%= cards[i].content %>
-                          </p>
-                          <h4 style="text-align: center">
-                              Rs. <%= cards[i].price %> 
-                          </h4>
+            
+                                <img src="images/<%= cards[i].image %>" onerror="this.onerror=null;this.src='images/default.jpeg';" style="width : 200px ; height : 200px ; margin-left: 50px">
+                                <p class="card-text" style = "text-align: center">
+                                            <%= cards[i].content %>
+                                </p>
+                            
+                         
+                                <h4 style="text-align: center">
+                                        Rs. <%= cards[i].price %> 
+                                </h4>
+                        
                         </div>
                         <div class="card-footer" style="text-align: center">
                             <a href="#" class="btn btn-primary" id ="<%= cards[i].id %>">Add To Cart</a>
