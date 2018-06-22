@@ -19,7 +19,7 @@ window.onload = function() {
                 window.location = "/admin" ;
             } )
         }else {
-           if ( event.target.className == "btn btn-primary" ) {
+           if ( event.target.className == "btn btn-success" ) {
                 alert("Item added Successfully...") ;
                 if (cart[id] == null) {
                     cart[id] = 1 ;

@@ -187,9 +187,9 @@ app.get( "/order" , function (req , res) {
     res.render( 'order.ejs' ) ;
 } ) ;
 
-let port = process.env.OPENSHIFT_NODEJS_PORT || 3000
-var ip = process.env.OPENSHIFT_NODEJS_IP || 'localhost'
+//let port = process.env.OPENSHIFT_NODEJS_PORT || 3000
+//var ip = process.env.OPENSHIFT_NODEJS_IP || 'localhost'
 
-app.listen( port , ip , function (req, res) {
+app.listen( 3000 , function (req, res) {
     console.log("Server Started") ;
 } ) ;
