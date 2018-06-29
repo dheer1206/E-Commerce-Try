@@ -10,16 +10,16 @@ app.use( bodyParser.urlencoded( {extended : true} ) ) ;
  
 // create the connection to database
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password : 'password' ,
+  host: 'sql12.freemysqlhosting.net',
+  user: 'sql12245265',
+  password : 'upsLUJk7Bh' ,
   multipleStatements: true 
 });
 
 // setting up the database to be used ;
 
-let startQuery = "create database if not exists ecommerce ;" +
-                  "use ecommerce ;" +
+let startQuery = "create database if not exists sql12245265 ;" +
+                  "use sql12245265 ;" +
                   "create table if not exists products ( id int primary key auto_increment , title varchar(200) , content varchar(1000) , price int , image varchar(200) ) ; " +
                   "create table if not exists cart ( id int primary key , title varchar(200) , content varchar(1000) , price int , quantity int ) ; " ;
 
@@ -190,6 +190,8 @@ app.get( "/order" , function (req , res) {
 //let port = process.env.OPENSHIFT_NODEJS_PORT || 3000
 //var ip = process.env.OPENSHIFT_NODEJS_IP || 'localhost'
 
-app.listen( 3000 , function (req, res) {
+const PORT = process.env.PORT || 4000
+
+app.listen( 4000 , function (req, res) {
     console.log("Server Started") ;
 } ) ;
