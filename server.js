@@ -188,8 +188,8 @@ app.get( "/order" , function (req , res) {
     res.render( 'order.ejs' ) ;
 } ) ;
 
-let port = process.env.OPENSHIFT_NODEJS_PORT || 3000
-let ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+let port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080
+let ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 
 //const PORT = process.env.PORT || 4000
 
