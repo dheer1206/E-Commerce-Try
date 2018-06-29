@@ -6,6 +6,7 @@ const mysql = require('mysql2');
 const bodyParser = require( 'body-parser' ) ;
 
 app.use(express.static('public')) ;
+app.use(express.static('public/images'));
 app.use( bodyParser.urlencoded( {extended : true} ) ) ;
  
 // create the connection to database
@@ -193,7 +194,7 @@ let ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
 
 //const PORT = process.env.PORT || 4000
 
-app.listen( port , ip,  function (req, res) {
+app.listen( port, ip ,  function (req, res) {
     console.log("%s and %s", process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP) ;
     console.log("Express server listening on port %d in %s mode", port , ip);
 } ) ;
