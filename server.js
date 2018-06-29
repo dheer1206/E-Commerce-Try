@@ -11,17 +11,17 @@ app.use( bodyParser.urlencoded( {extended : true} ) ) ;
  
 // create the connection to database
 const connection = mysql.createConnection({
-  host: 'sql12.freemysqlhosting.net',
-  user: 'sql12245265',
-  password : 'upsLUJk7Bh' ,
+  host: 'mysql://mysq1:3306/',
+  user: 'userVYl',
+  password : 'FHFjVopl8qpyodDb' ,
   multipleStatements: true 
 });
 
 
 // setting up the database to be used ;
 
-let startQuery = "create database if not exists sql12245265 ;" +
-                  "use sql12245265 ;" +
+let startQuery = "create database if not exists sampledb ;" +
+                  "use sampledb ;" +
                   "create table if not exists products ( id int primary key auto_increment , title varchar(200) , content varchar(1000) , price int , image varchar(200) ) ; " +
                   "create table if not exists cart ( id int primary key , title varchar(200) , content varchar(1000) , price int , quantity int ) ; " ;
 
