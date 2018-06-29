@@ -194,5 +194,6 @@ let ip = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 //const PORT = process.env.PORT || 4000
 
 app.listen( port , ip,  function (req, res) {
+    console.log("%s and %s", process.env.OPENSHIFT_NODEJS_PORT, process.env.OPENSHIFT_NODEJS_IP) ;
     console.log("Express server listening on port %d in %s mode", port , ip);
 } ) ;
