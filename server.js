@@ -16,6 +16,7 @@ const connection = mysql.createConnection({
   multipleStatements: true 
 });
 
+
 // setting up the database to be used ;
 
 let startQuery = "create database if not exists sql12245265 ;" +
